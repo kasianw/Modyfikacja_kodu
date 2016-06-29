@@ -71,8 +71,8 @@ unsigned char Pixel::get_blue()
 // dziêki temu jest to szybsze! i nie musimy kopiowaæ np. tablicy dynamicznej
 bool Pixel::operator==( const Pixel& pixel )
 {
-	return this->blue == pixel.blue && this->red == pixel.red &&
-	       this->green == pixel.green; // a to zwyk³e porównanie (operator porównania ma za zadanie porównaæ dwa obiekty
+	return this->blue == pixel.blue && this->red == pixel.red &&   this->green == pixel.green;
+	// a to zwyk³e porównanie (operator porównania ma za zadanie porównaæ dwa obiekty
 	                                   // tak jak porównujemy liczby
 	                                   // dziêki implementacji tego operatora mo¿emy napisaæ:
 	                                   // Pixel pixel_a = Pixel(3,3,3);
@@ -148,19 +148,18 @@ unsigned char average = ( red + green + blue ) / 3;
 
 void Pixel::to_gray_left()
 {
-unsigned
-	red = 0.299*red + green* 0.587 + blue*0.114;
-	green = 0;
-	blue = 0;
+unsigned char help = 0.299*red + green* 0.587 + blue*0.114;
+	 red = help;
+	 green = 0;
+	 blue = 0;
 }
 
 void Pixel::to_gray_right()
 {
-unsigned char average = 0.299*red + green* 0.587 + blue*0.114;
-	red = 0;
-	green = average;
-	blue = average;
-
+unsigned char help = 0.299*red + green* 0.587 + blue*0.114;
+	 red = 0;
+	 green = help;
+	 blue = help;
 }
 
 

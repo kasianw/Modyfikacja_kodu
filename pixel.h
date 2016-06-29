@@ -47,6 +47,7 @@ class Pixel // definicja klasy, klasa nazywa siê Pixel
 		unsigned char red;
 		unsigned char green;
 		unsigned char blue;
+
 };
 
 // struktra patrz ni¿ej
